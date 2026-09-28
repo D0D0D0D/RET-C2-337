@@ -1,0 +1,23 @@
+# Agent Manifest — AgentRegistry entry point
+# AgentRegistry reads discovery and compile-time keys at the root level.
+id: "RET-C2-337"
+name: "Retail Demand Anomaly Detection Agent (TimesFM 2.5 Zero-Shot)"
+namespace: "ret"
+version: "1.0.0"
+enabled: true
+category: "Cat 2"
+generation_mode: "llm"
+industry: "RET"
+
+# Opaque compatibility metadata.
+base_type: "DocGenerationAgent"
+
+# Entry point — single dotted import path (module.Class).
+class: "src.graph.graph.RETDemandAnomalyAgent"
+
+# Security
+required_trust_level: "VERIFIED_EXTERNAL"
+
+requires:
+  secrets: []
+  extras: []

@@ -1,0 +1,17 @@
+# Runtime parameters — loaded separately from config/agent.yaml.
+
+max_retry: 3
+timeout_seconds: 30
+
+# TimesFM inference backend. Compute is EXTERNAL to the agent in production:
+#   remote   = external TimesFM serving endpoint over HTTP (PRODUCTION)
+#   bigquery = external BigQuery ML (PRODUCTION, GCP-native)
+#   baseline = in-process deterministic (default; CI/demo/fallback)
+#   local    = in-process real model (DEV/OFFLINE ONLY — not production shape)
+inference_mode: "baseline"
+
+# S-5: max SKUs per invocation (rate/resource limit; paginate upstream beyond this)
+max_skus_per_call: 500
+
+# Default forecast horizon (time points)
+horizon: 7
